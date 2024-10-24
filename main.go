@@ -10,7 +10,7 @@ import (
 
 func main() {
 	// Open the PDF file
-	file, err := os.Open("sample2.pdf")
+	file, err := os.Open("sample.pdf")
 	if err != nil {
 		log.Fatalf("Error opening PDF file: %v", err)
 	}
@@ -42,7 +42,6 @@ func main() {
 			log.Fatalf("Error creating PDF reader: %v", err)
 			return
 		}
-		reorderedText, err := bidi.ProcessText(content, bidi.DefaultDirection)
 		if err != nil {
 			log.Printf("Error reordering text for page %d: %v", i, err)
 			continue
